@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Mo3tamad</a>
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active">Mo3tamad</a>
       <!---<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button> -->
@@ -8,22 +8,21 @@
 
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" routerLink="/about" routerLinkActive="active" >About</a>
           </li>
-          <li class="nav-item" *ngIf="loggedIn" >
-            <a class="nav-link" href="#">Exams</a>
-          </li>
-          <li class="nav-item" *ngIf="loggedIn" >
-            <a class="nav-link">My profile</a>
-          </li>
+          <ng-container *ngIf="accountService.currentUser$ | async">
+            <li class="nav-item" >
+              <a class="nav-link" routerLink="/exams" routerLinkActive="active">Exams</a>
+            </li>
+          </ng-container>
         </ul>
 
-        <div class="btn-group"  *ngIf="loggedIn" dropdown>
+        <div class="btn-group" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
           <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
-            More settings<span class="caret"></span>
+            Welcome {{user.username | titlecase}}<span class="caret"></span>
           </button>
           <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-            <li role="menuitem"><a class="dropdown-item">Edit Profile</a></li>
+            <li role="menuitem"><a class="dropdown-item">My Profile</a></li>
             <li role="menuitem"><a class="dropdown-item" (click)="logout()">Logout</a></li>
           </ul>
         </div>
@@ -42,7 +41,7 @@
             class="form-control me-2"
             type="password"
             placeholder="Password">
-          <button class="btn btn-outline-success" type="submit">Login</button>
+          <button class="btn btn-dark" type="submit">Login</button>
         </form>
       </div>
   <!---  </div> -->

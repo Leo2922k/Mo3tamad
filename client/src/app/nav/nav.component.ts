@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AccountService } from '../_services/account.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nav',
@@ -11,8 +13,9 @@ export class NavComponent {
   model: any = {}
   loggedIn = false;
 
-  constructor(private accountService: AccountService) {
-
+  constructor(public accountService: AccountService,
+              private router: Router,
+              private toastr: ToastrService) {
 
   }
 
@@ -23,25 +26,25 @@ export class NavComponent {
   getCurrentUser() {
     this.accountService.currentUser$.subscribe({
       next: user => this.loggedIn = !!user,
-      error: error => console.log(error)
+      error: error => this.toastr.error(error.error)
     })
   }
 
   login() {
     this.accountService.login(this.model).subscribe({
 
-      next: Response => {
-        console.log(Response);
-        this.loggedIn = true; 
-      }, 
-      error: error => console.log(error)
-
+      next: () => {
+        this.toastr.success('Welcome mate!');
+        this.router.navigateByUrl('/about');
+      },
+      error: error => this.toastr.error(error.error)
     })
+    
 
   }
 
   logout() {
     this.accountService.logout();
-    this.loggedIn = false;
+    this.router.navigateByUrl('/');
   }
 }
