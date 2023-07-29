@@ -10,6 +10,11 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/about" routerLinkActive="active" >About</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/errors" routerLinkActive="active" >errors</a>
+          </li>
+          
           <ng-container *ngIf="accountService.currentUser$ | async">
             <li class="nav-item" >
               <a class="nav-link" routerLink="/exams" routerLinkActive="active">Exams</a>

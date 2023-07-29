@@ -36,8 +36,7 @@ export class NavComponent {
       next: () => {
         this.toastr.success('Welcome mate!');
         this.router.navigateByUrl('/about');
-      },
-      error: error => this.toastr.error(error.error)
+      }
     })
     
 
