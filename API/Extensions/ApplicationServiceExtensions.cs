@@ -1,3 +1,4 @@
+using API.Data;
 using API.Date;
 using API.Interfaces;
 using API.Services;
@@ -15,6 +16,9 @@ namespace API.Extensions
 
             services.AddCors();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IExamRepository, ExamRepository>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             // <interface, impelementaion>
 
             return services;

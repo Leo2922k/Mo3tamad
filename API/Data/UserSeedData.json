@@ -1,0 +1,112 @@
+[
+    {
+      "UserName": "Brittany",
+      "Gender": "female",
+      "DateOfBirth": "1968-09-21",
+      "FullName": "Brittany Morton Fox",
+      "ProfilePicture": 
+        {
+          "PhotoUrl": "https://randomuser.me/api/portraits/women/17.jpg"
+        }
+      
+    },
+    {
+      "UserName": "Francesca",
+      "Gender": "female",
+      "DateOfBirth": "1971-10-12",
+      "FullName": "Francesca Mathews Cleveland",
+      "ProfilePicture": 
+        {
+          "PhotoUrl": "https://randomuser.me/api/portraits/women/4.jpg"
+        }
+      
+    },
+    {
+      "UserName": "Francis",
+      "Gender": "female",
+      "DateOfBirth": "1969-03-01",
+      "FullName": "Francis Bartlett Peck",
+      "ProfilePicture": 
+        {
+          "PhotoUrl": "https://randomuser.me/api/portraits/women/9.jpg"
+        }
+      
+    },
+    {
+      "UserName": "Bettye",
+      "Gender": "female",
+      "DateOfBirth": "1976-10-27",
+      "FullName": "Bettye Walton Fisher",
+      "ProfilePicture": 
+        {
+          "PhotoUrl": "https://randomuser.me/api/portraits/women/23.jpg"
+        }
+      
+    },
+    {
+      "UserName": "Beverly",
+      "Gender": "female",
+      "DateOfBirth": "1975-01-31",
+      "FullName": "Beverly Tyson Hatfield",
+      "ProfilePicture": 
+        {
+          "PhotoUrl": "https://randomuser.me/api/portraits/women/94.jpg"
+        }
+      
+    },
+        {
+          "UserName": "Mccullough",
+          "Gender": "male",
+          "DateOfBirth": "1958-10-22",
+          "FullName": "Mccullough Holloway Bradshaw",
+          "ProfilePicture": 
+            {
+              "PhotoUrl": "https://randomuser.me/api/portraits/men/36.jpg"
+            }
+          
+        },
+        {
+          "UserName": "Sawyer",
+          "Gender": "male",
+          "DateOfBirth": "1973-12-13",
+          "FullName": "Sawyer Summers Durham",
+          "ProfilePicture": 
+            {
+              "PhotoUrl": "https://randomuser.me/api/portraits/men/88.jpg"
+            }
+          
+        },
+        {
+          "UserName": "Phillips",
+          "Gender": "male",
+          "DateOfBirth": "1982-02-26",
+          "FullName": "Phillips Faulkner Welch",
+          "ProfilePicture": 
+            {
+              "PhotoUrl": "https://randomuser.me/api/portraits/men/96.jpg"
+            }
+          
+        },
+        {
+          "UserName": "Gillespie",
+          "Gender": "male",
+          "DateOfBirth": "1976-01-23",
+          "FullName": "Gillespie Cooper Navarro",
+          "ProfilePicture": 
+            {
+              "PhotoUrl": "https://randomuser.me/api/portraits/men/32.jpg"
+            }
+          
+        },
+        {
+          "UserName": "Salinas",
+          "Gender": "male",
+          "DateOfBirth": "1959-12-01",
+          "FullName": "Salinas Hardy Sweeney",
+          "ProfilePicture": 
+            {
+              "PhotoUrl": "https://randomuser.me/api/portraits/men/21.jpg"
+            }
+          
+        }
+  ]

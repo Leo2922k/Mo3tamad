@@ -1,0 +1,231 @@
+[
+    {
+      "ExamName": "Python",
+      "ExamDescription": "A test assessing the knowledge and proficiency of individuals in the Python programming language and its fundamental concepts",
+      "ExamPicture": {
+        "ExamPhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png"
+      },
+      "ExamQuestions": [
+        {
+          "QuestionText": "Which statement is used to define a function in Python?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "def",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "func",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "function",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "define",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "In Python, how do you comment a single-line statement?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "# comment",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "// comment",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "/* comment */",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": " <!-- comment -->",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "What does the 'print()' function do in Python?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "Reads user input from the console.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "Displays output to the console.",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "Returns the sum of two numbers.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "Reads and writes data to a file.",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "Which data type is used to store a sequence of characters in Python?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "int",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "str",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "float",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "list",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "How do you check the number of elements in a list named 'my_list'?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "size(my_list)",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "len(my_list)",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "count(my_list)",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "length(my_list)",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "Which Python loop is suitable for iterating through a sequence while executing a block of code?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "for loop",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "while loop",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "do-while loop",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "iterate loop",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "In Python, how do you remove an item from a list named 'my_list' at index 2?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "my_list.remove(2)",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "my_list.delete(2)",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "my_list.pop(2)",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "my_list.drop(2)",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "How do you open a file named 'data.txt' in Python for writing?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "file = open('data.txt', 'w')",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "file = open('data.txt', 'r')",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "file = open('data.txt', 'wb')",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "file = open('data.txt', 'write')",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "In Python, what is the purpose of the 'pass' statement?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "To terminate a loop prematurely.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "To raise an exception manually.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "To define a function without implementing it.",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "To exit the program immediately.",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "What does the 'pass' statement do in Python?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "It raises an exception and terminates the program.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "It is used to skip the current iteration in a loop and proceed to the next iteration.",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "It is used to convert a string to an integer.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "It is used to print the output to the console.",
+              "AnswersTrue": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
