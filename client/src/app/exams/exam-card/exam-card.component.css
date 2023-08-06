@@ -1,0 +1,15 @@
+
+.card-icons {
+    opacity: 1; 
+    /* Set initial opacity to 1 (fully visible) */
+    transform: scale(1); 
+    /* Set initial scale to 1 (no scaling) */
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+    /* Add transition effect to opacity and transform properties */
+  }
+  
+  /* Define hover state for card-icons */
+  .card-icons:hover {
+    opacity: 0.9; /* Reduce opacity on hover */
+    transform: scale(1.1); /* Scale up on hover */
+  }

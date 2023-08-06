@@ -1,5 +1,6 @@
 using API.DTO;
 using API.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Interfaces
 {
@@ -16,10 +17,8 @@ namespace API.Interfaces
 
         Task <AppExams> GetExamByExamnameAsync(string examname);
 
-        Task <IEnumerable<ExamsDto>> GerExamsDtoAsync();
+        Task <IEnumerable<ExamsDto>> GetExamsDtoAsync();
 
         Task <ExamsDto> GetExamDtoAsync (string examname);
-
-        
     }
 }

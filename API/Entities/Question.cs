@@ -1,4 +1,4 @@
-using System.Runtime.InteropServices;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Entities
 {

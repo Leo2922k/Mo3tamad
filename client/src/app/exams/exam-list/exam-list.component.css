@@ -1,0 +1,11 @@
+.col-2:hover {
+    transform: scale(1.05, 1.05);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+
+.col-2 {
+    transform: scale(1.0, 1.0);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}

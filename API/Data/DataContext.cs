@@ -17,6 +17,7 @@ namespace API.Date
 
         public DbSet <AppExams> Exams {get; set;}
 
+       // public DbSet <Question> Questions {get; set;}
         public DbSet <UserExam> UserExam {get; set;}
     }
 }

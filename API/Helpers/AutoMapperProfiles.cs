@@ -12,9 +12,13 @@ namespace API.Helpers
                 dest => dest.ProfilePictureUrl, opt=> opt.MapFrom(src => src.ProfilePicture.PhotoUrl)
                 );
             CreateMap<Photo, PhotoDto>();
-            CreateMap<AppExams, ExamsDto>().ForMember(
+            CreateMap<AppExams, ExamsDto>()
+            .ForMember(
                 dest => dest.ExamPictureUrl, opt => opt.MapFrom(src => src.ExamPicture.ExamPhotoUrl)
-            );
+            )
+            .ForMember(
+                    dest => dest.ExamQuestion, opt => opt.MapFrom(src => src.ExamQuestions) // Eager loading related Questions
+                );
             CreateMap<ExamPhoto, ExamPhotoDto>();
             CreateMap<Question, QuestionDto>();
             CreateMap<Answers, AnswersDto>();

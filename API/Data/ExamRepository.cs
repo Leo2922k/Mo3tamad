@@ -45,17 +45,19 @@ namespace API.Data
             _context.Entry(exam).State = EntityState.Modified; // just inform without changing
         }
 
-        public async Task<IEnumerable<ExamsDto>> GerExamsDtoAsync()
+        public async Task<IEnumerable<ExamsDto>> GetExamsDtoAsync()
         {
                 return await _context.Exams
+                   // .Include(exam => exam.ExamQuestions)
                     .ProjectTo<ExamsDto> (_mapper.ConfigurationProvider)
                     .ToListAsync();
         }
-
+        
         public async Task<ExamsDto> GetExamDtoAsync(string examname)
         {
-            return await _context.Exams.
-                Where(x => x.ExamName == examname)
+            return await _context.Exams
+                //.Include(exam => exam.ExamQuestions)
+                .Where(x => x.ExamName == examname)
                 .ProjectTo<ExamsDto>(_mapper.ConfigurationProvider)
                 .SingleOrDefaultAsync();
         }

@@ -1,1 +1,35 @@
-<p>exam-detail works!</p>
+<div class="row" *ngIf="exam">
+    <div class="col-4">
+        <div class="card">
+            <h1>{{exam.examName}}</h1>
+            <img src="{{exam.examPicture.examPhotoUrl}}" alt="{{exam.examName}}" width="300" height="200" class="card-img-top img-thumbnail">
+            <div class="card-body">
+                <div>
+                    <strong>Exam Description: </strong>
+                    <p>{{exam.examDescription}}</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="btn-group d-flex"></div>
+                    <button class="btn btn-primary">Start the exam</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-8">
+        <tabset class="exam-instructions">
+            <tab heading="Assessment instructions">
+                <h4>Assessment instructions:</h4>
+                <p>-The exam is</p>
+            </tab>
+        </tabset>
+    </div>
+
+    <div *ngFor="let question of questions">
+        {{question.questionText}}
+        <div *ngFor="let answer of question.questionAnswers">
+            {{ answer.answersOption }}
+        </div>
+        <hr>
+    </div>
+</div>
