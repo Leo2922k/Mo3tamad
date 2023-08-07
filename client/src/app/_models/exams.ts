@@ -1,6 +1,6 @@
 import { ExamPicture } from "./exampicture";
 import { ExamQuestions } from "./examquestions";
-import { UserExams } from "./userexam";
+import { UserExam } from "./userexam";
 
 export interface Exams {
     examId: number;
@@ -10,6 +10,6 @@ export interface Exams {
     examPictureUrl: string;
     examPicture: ExamPicture;
     examQuestion: ExamQuestions[]
-    userExams: UserExams[];
+    userExams: UserExam[];
 }
 

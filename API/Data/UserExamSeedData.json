@@ -1,7 +1,8 @@
 [
     {
-      "UserId": 1,
+      "Id": 1,
       "ExamId": 1,
+      "UserExamGrade": 15,
       "UserExamScreenVideoUrl": "https://www.youtube.com/watch?v=KA2Gdm_ipXE&list=RDKA2Gdm_ipXE&start_radio=1",
       "UserExamCamVideoUrl": "https://www.youtube.com/watch?v=KA2Gdm_ipXE&list=RDKA2Gdm_ipXE&start_radio=1"
       

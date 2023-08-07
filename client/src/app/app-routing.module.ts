@@ -8,6 +8,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { ExamQuizComponent } from './exams/exam-quiz/exam-quiz.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -16,7 +17,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path: 'exams', component: ExamListComponent},
-      {path: 'exams/:examname', component: ExamDetailComponent},
+      {path: 'exams/:examname', component: ExamQuizComponent},
     ]
   },
   {path: 'about', component: AboutComponent},

@@ -2,10 +2,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Entities
 {
-    [PrimaryKey(nameof(UserId), nameof(ExamId))]
+    [PrimaryKey(nameof(Id), nameof(ExamId))]
     public class UserExam
     {
-        public int UserId { get; set; }
+        public int Id { get; set; }
 
         public int ExamId { get; set; }
 
@@ -16,6 +16,8 @@ namespace API.Entities
         public string UserExamScreenVideoUrl { get; set; }
 
         public string UserExamCamVideoUrl { get; set; }
+
+        public int UserExamGrade { get; set; }
 
     }
 }

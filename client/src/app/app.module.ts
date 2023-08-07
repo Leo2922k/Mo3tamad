@@ -21,6 +21,7 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { ExamCardComponent } from './exams/exam-card/exam-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { ExamQuizComponent } from './exams/exam-quiz/exam-quiz.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     NotFoundComponent,
     ServerErrorComponent,
     MemberListComponent,
-    ExamCardComponent
+    ExamCardComponent,
+    ExamQuizComponent,
   ],
   imports: [
     CommonModule,

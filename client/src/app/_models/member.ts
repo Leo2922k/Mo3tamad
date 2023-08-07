@@ -1,5 +1,5 @@
 import { ProfilePicture } from "./profilepicture";
-import { UserExams } from "./userexam";
+import { UserExam } from "./userexam";
 
 export interface Member {
     id: number;
@@ -9,5 +9,5 @@ export interface Member {
     profilePictureUrl: string;
     profilePicture: ProfilePicture;
     fullName: string;
-    userExams: UserExams[];
+    userExams: UserExam[];
 }

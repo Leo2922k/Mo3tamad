@@ -113,15 +113,16 @@ namespace API.Data.Migrations
                 name: "UserExam",
                 columns: table => new
                 {
-                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false),
                     ExamId = table.Column<int>(type: "INTEGER", nullable: false),
                     AppUserId = table.Column<int>(type: "INTEGER", nullable: true),
                     UserExamScreenVideoUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    UserExamCamVideoUrl = table.Column<string>(type: "TEXT", nullable: true)
+                    UserExamCamVideoUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    UserExamGrade = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserExam", x => new { x.UserId, x.ExamId });
+                    table.PrimaryKey("PK_UserExam", x => new { x.Id, x.ExamId });
                     table.ForeignKey(
                         name: "FK_UserExam_Exams_ExamId",
                         column: x => x.ExamId,

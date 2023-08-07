@@ -1,0 +1,79 @@
+
+<div class="start_btn" *ngIf="!showWarning">
+    <div class="card mb-4" *ngIf="exam">
+        <div class="card-img-wrapper">
+            <img src ="{{exam.examPictureUrl}}" alt="" class="card-img-top">
+        </div>
+        <div class="card-body p-1">
+            <h5 class="card-title text-center mb-1">
+                {{exam.examName}}
+            </h5>
+            <p class="card-text text-muted text-center">
+                {{exam.examDescription}}
+            </p>
+            <div class="buttons">
+                <button class="res" (click)="showWarningPopup()">Start The Test</button>
+            </div> 
+            </div>
+        </div>
+    </div>
+
+
+<div class="info_box" [ngClass]="showWarning ? 'activeInfo':''">
+    <div class="info-title"><span>Some Rules of this Test</span></div>
+    <div class="info-list">
+        <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
+        <div class="info">2. Once you select your answer, it can't be undone.</div>
+        <div class="info">3. You can't select any option once time goes off.</div>
+        <div class="info">4. You can't exit from the Test Once Started.</div> 
+    </div>
+    <div class="buttons">
+        <button class="quit" routerLink="/exams">Exit Test</button>
+        <button class="restart" (click)="startQuiz()">Continue</button>
+    </div>
+</div>  
+
+<div class="quiz_box" [ngClass]="isQuizStarted? 'activeQuiz':''">
+    <header>
+        <div class="title">Test questions</div>
+        <div class="timer">
+            <div class="time_left_txt">Time Off</div>
+            <div class="timer_sec">{{remainingTime}}</div>
+        </div>
+        <div class="time_line" style="width: 550px;"></div>
+    </header>
+    <section *ngIf="isQuizStarted">
+        <div class="que_text"><span>{{currentQuestionNo+1}}. {{questionsList[currentQuestionNo].questionText}} </span></div>
+        <div class="option_list">
+            <div class="option"  
+            [ngClass]="{'disabled': isOptionSelected(questionsList[currentQuestionNo].questionAnswers),
+                                            'correct':answer.isSelected && answer.answersTrue,
+                                            'incorrect':answer.isSelected  && !answer.answersTrue}"
+                                            (click)="selectOption(answer)" *ngFor="let answer of questionsList[currentQuestionNo].questionAnswers">
+                <span>{{answer.answersOption}}</span> 
+            </div> 
+        </div>
+    </section> 
+
+    <footer>
+        <div class="total_que"><span>
+                <p>{{currentQuestionNo+1}}</p> of <p>{{questionsList.length}}</p> Questions
+            </span></div>
+        <button *ngIf="currentQuestionNo+1 == questionsList.length" class="next_btn show" (click)="finish()">Finish</button>
+        <button *ngIf="currentQuestionNo+1 != questionsList.length" class="next_btn show" (click)="nextQuestion()">Next Question</button>
+    </footer>
+</div>
+
+
+<div class="result_box" [ngClass]="isQuizEnded?'activeResult':''">
+    <div class="icon">
+        <i class="fas fa-crown"></i>
+    </div>
+    <div class="complete_text">You've completed the Test!</div>
+    <div class="score_text">
+        <span><p>Number of true answers: {{correctAnswerCount}}  <br> Total number of questions: {{questionsList.length}}</p></span>
+    </div>
+    <div class="buttons">
+        <button class="quit" routerLink="/exams">Quit Test</button>
+    </div>
+</div>

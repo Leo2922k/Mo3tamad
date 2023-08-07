@@ -7,5 +7,7 @@ namespace API.DTO
         public string UserExamScreenVideoUrl { get; set; }
 
         public string UserExamCamVideoUrl { get; set; }
+
+        public int UserExamGrade { get; set; }
     }
 }
