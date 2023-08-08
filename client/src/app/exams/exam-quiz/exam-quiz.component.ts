@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription, interval } from 'rxjs';
+import { Subscription, interval, take } from 'rxjs';
 import { Exams } from 'src/app/_models/exams';
 import { ActivatedRoute } from '@angular/router';
 import { ExamsService } from 'src/app/_services/exams.service';
@@ -101,7 +101,7 @@ export class ExamQuizComponent implements OnInit{
   startQuiz() {
     this.showWarning = false;
     this.isQuizStarted = true;  
-    this.subscription.push(this.timer.subscribe(res=> {
+    this.subscription.push(this.timer.pipe(take(1)).subscribe(res=> {
       console.log(res);
       if(this.remainingTime != 0) {
         this.remainingTime --;

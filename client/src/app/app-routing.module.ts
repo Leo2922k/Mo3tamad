@@ -9,6 +9,8 @@ import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { ExamQuizComponent } from './exams/exam-quiz/exam-quiz.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { preventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,6 +20,7 @@ const routes: Routes = [
     children: [
       {path: 'exams', component: ExamListComponent},
       {path: 'exams/:examname', component: ExamQuizComponent},
+      {path: 'member/edit', component: MemberEditComponent, canDeactivate: [preventUnsavedChangesGuard]},
     ]
   },
   {path: 'about', component: AboutComponent},

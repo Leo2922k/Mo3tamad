@@ -22,6 +22,8 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { ExamCardComponent } from './exams/exam-card/exam-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { ExamQuizComponent } from './exams/exam-quiz/exam-quiz.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { ExamQuizComponent } from './exams/exam-quiz/exam-quiz.component';
     MemberListComponent,
     ExamCardComponent,
     ExamQuizComponent,
+    MemberEditComponent,
   ],
   imports: [
     CommonModule,
@@ -50,7 +53,8 @@ import { ExamQuizComponent } from './exams/exam-quiz/exam-quiz.component';
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

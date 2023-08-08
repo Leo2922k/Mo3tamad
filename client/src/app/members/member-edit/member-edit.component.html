@@ -1,0 +1,54 @@
+
+<div class="row" *ngIf="member">
+
+    <div class="row">
+    <div class="col-4 text-center">  
+        <h1>About {{member.userName}}</h1>
+    </div>
+    <div class="col-8">
+        <div class="alert alert-info pb-0" *ngIf="editForm.dirty">
+            <p><strong>Inforamtion: </strong> You have made changes, any unsaved changes will be lost</p>
+        </div>
+    </div>
+    </div>
+
+
+    <div class = "col-4">
+        <div class="card">
+        <img src="{{member.profilePictureUrl}}" alt="{{member.userName}}"
+            class="card-img-top img-thumbnail">
+        <div>
+            <strong>Full Name:</strong>
+            <p>{{member.fullName}}</p>
+        </div>
+        <div>
+            <strong>Date of birth:</strong>
+            <p>{{member.dateOfBirth}}</p>
+        </div>
+        <div>
+            <strong>Gender:</strong>
+            <p>{{member.gender}}</p>
+        </div>
+        </div>
+        <div class="card-footer">
+                <button form="editForm" [disabled]="!editForm.dirty" class="btn btn-sucess col-12">Save changes</button>
+        </div>
+    </div>
+
+    <div class="col-8">
+        <tabset class="member-tabset">
+            <tab heading="Edit details">
+                <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
+                    <h4 class="mt-2">Full Name:</h4>
+                    <input type="text" class="form-control" [(ngModel)]="member.fullName" name="fullName">
+
+                    <h4 class="mt-2">date Of Birth:</h4>
+                    <input type="text" class="form-control" [(ngModel)]="member.dateOfBirth" name="dateOfBirth">
+                </form>
+            </tab>
+            <tab heading="Edit Photo">
+                <p>photo brooooo</p>
+            </tab>
+        </tabset>
+    </div>
+</div>
