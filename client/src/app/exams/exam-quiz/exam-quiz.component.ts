@@ -101,7 +101,7 @@ export class ExamQuizComponent implements OnInit{
   startQuiz() {
     this.showWarning = false;
     this.isQuizStarted = true;  
-    this.subscription.push(this.timer.pipe(take(1)).subscribe(res=> {
+    this.subscription.push(this.timer.subscribe(res=> {
       console.log(res);
       if(this.remainingTime != 0) {
         this.remainingTime --;

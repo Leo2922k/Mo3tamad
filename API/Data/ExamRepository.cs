@@ -27,12 +27,12 @@ namespace API.Data
 
         public async Task<AppExams> GetExamByExamnameAsync(string examname)
         {
-            return await _context.Exams.Include(p => p.ExamPicture).SingleOrDefaultAsync(x => x.ExamName == examname);
+            return await _context.Exams.Include(p => p.ExamPicture).Include(p => p.UserExams).SingleOrDefaultAsync(x => x.ExamName == examname);
         }
 
         public async Task<IEnumerable<AppExams>> GetExamsAsync()
         {
-            return await _context.Exams.Include(p => p.ExamPicture).ToListAsync();
+            return await _context.Exams.Include(p => p.ExamPicture).Include(p => p.UserExams).ToListAsync();
         }
 
         public async Task<bool> SaveAllAsync()

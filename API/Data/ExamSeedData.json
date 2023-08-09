@@ -227,5 +227,235 @@
           ]
         }
       ]
+    },
+    {
+      "ExamName": "Java",
+      "ExamDescription": "A test assessing the knowledge and proficiency of individuals in the Java programming language and its fundamental concepts",
+      "ExamPicture": {
+        "ExamPhotoUrl": "https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fb5murfp45i861.png"
+      },
+      "ExamQuestions": [
+        {
+          "QuestionText": "Which keyword is used to define a method in Java?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "def",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "method",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "function",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "public",
+              "AnswersTrue": true
+            }
+          ]
+        },
+        {
+          "QuestionText": "In Java, how do you declare a single-line comment?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "// comment",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "# comment",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "/* comment */",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "<!-- comment -->",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "What is the purpose of the 'System.out.println()' statement in Java?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "Reads user input from the console.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "Displays output to the console.",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "Returns the sum of two numbers.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "Reads and writes data to a file.",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "Which data type is used to store whole numbers in Java?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "int",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "str",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "float",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "list",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "How do you create an array named 'myArray' with a length of 5 in Java?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "int[] myArray = new int[5];",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "array myArray = new array(5);",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "int myArray[5];",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "myArray = new int[5];",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "Which Java loop is used for iterating through a sequence while a condition is true?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "for loop",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "while loop",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "do-while loop",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "iterate loop",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "In Java, how do you remove an element at index 2 from an ArrayList named 'myList'?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "myList.remove(2);",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "myList.delete(2);",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "myList.pop(2);",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "myList.drop(2);",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "How do you define a class named 'Car' in Java?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "class Car = {}",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "class Car { }",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "class = Car { }",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "Car class { }",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "In Java, what is the purpose of the 'extends' keyword?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "To declare a variable.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "To import a package.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "To indicate inheritance.",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "To override a method.",
+              "AnswersTrue": false
+            }
+          ]
+        },
+        {
+          "QuestionText": "What does the 'static' keyword mean in Java?",
+          "QuestionMark": 3,
+          "QuestionAnswers": [
+            {
+              "AnswersOption": "It indicates that a method is dynamic and can change at runtime.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "It defines a variable with constant value.",
+              "AnswersTrue": true
+            },
+            {
+              "AnswersOption": "It specifies that a class cannot be extended.",
+              "AnswersTrue": false
+            },
+            {
+              "AnswersOption": "It declares a method to be abstract.",
+              "AnswersTrue": false
+            }
+          ]
+        }
+      ]
     }
+    
   ]

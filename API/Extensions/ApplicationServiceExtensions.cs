@@ -1,5 +1,6 @@
 using API.Data;
 using API.Date;
+using API.Helpers;
 using API.Interfaces;
 using API.Services;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +21,8 @@ namespace API.Extensions
             services.AddScoped<IExamRepository, ExamRepository>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             // <interface, impelementaion>
-
+            services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
+            services.AddScoped<IPhotoService, PhotoService>();
             return services;
         }
     }
