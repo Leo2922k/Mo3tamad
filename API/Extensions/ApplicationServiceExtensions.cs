@@ -19,6 +19,7 @@ namespace API.Extensions
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IExamRepository, ExamRepository>();
+            services.AddScoped<IUserExamRepository, UserExamRepository>();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             // <interface, impelementaion>
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));

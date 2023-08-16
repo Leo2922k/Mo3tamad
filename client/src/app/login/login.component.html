@@ -1,0 +1,24 @@
+<div class="center-container">
+  <form *ngIf="!loggedIn" #loginForm="ngForm" class="custom-form" (ngSubmit)="login()" autocomplete="off">
+    <h1 class="login-heading">Login</h1>
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/007/407/996/small/user-icon-person-icon-client-symbol-login-head-sign-icon-design-vector.jpg" alt="Login Image" class="login-image">
+    <input
+      name="username"
+      [(ngModel)]="model.username"
+      class="form-control custom-input"
+      type="text"
+      placeholder="Username"
+    />
+    <input
+      name="password"
+      [(ngModel)]="model.password"
+      class="form-control custom-input"
+      type="password"
+      placeholder="Password"
+    />
+    <div class="text-center" >
+    <button class="btn btn-dark custom-button" type="submit">Login</button>
+    <button class="btn btn-dark custom-button" routerLink="/register" routerLinkActive="active">Sign up</button>
+  </div>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<h2>Admin Panel</h2>
+
+<div class="tab-panel">
+    <tabset class="member-tabset">
+        <tab heading="Users management" *appHasRole="['Admin', 'Moderator']">
+            <div class="container">
+                 <app-user-management></app-user-management>
+            </div>
+        </tab>
+        <tab heading="Exams management" *appHasRole="['Admin', 'Moderator']">
+            <div class="container">
+                 <app-exam-management></app-exam-management>
+            </div>
+        </tab>
+        <tab heading="Results management" *appHasRole="['Admin', 'Moderator']">
+            <div class="container">
+                 <app-result-management></app-result-management>
+            </div>
+        </tab>
+    </tabset>
+</div>

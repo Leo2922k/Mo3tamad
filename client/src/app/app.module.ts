@@ -25,6 +25,14 @@ import { ExamQuizComponent } from './exams/exam-quiz/exam-quiz.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { ExamResultComponent } from './exams/exam-result/exam-result.component';
+import { LoginComponent } from './login/login.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './_directives/has-role.directive';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { ExamManagementComponent } from './admin/exam-management/exam-management.component';
+import { ResultManagementComponent } from './admin/result-management/result-management.component';
+import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +51,14 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
     ExamQuizComponent,
     MemberEditComponent,
     PhotoEditorComponent,
+    ExamResultComponent,
+    LoginComponent,
+    AdminPanelComponent,
+    HasRoleDirective,
+    UserManagementComponent,
+    ExamManagementComponent,
+    ResultManagementComponent,
+    RolesModalComponent,
   ],
   imports: [
     CommonModule,

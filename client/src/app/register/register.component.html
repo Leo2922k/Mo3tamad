@@ -1,26 +1,21 @@
-<form #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off">
-    <h2 class="text-center text-primary"> Sign up</h2>
-    <hr>
-    <div class="mb-3">
+<form class="custom-form" #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off">
+    <h1 class="signup-heading">Sign up</h1>
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/007/407/996/small/user-icon-person-icon-client-symbol-login-head-sign-icon-design-vector.jpg" alt="Login Image" class="login-image">
         <input
-        class="text"
-        class="form-control"
+        class="form-control custom-input"
         name="username"
         [(ngModel)] ="model.username"
         placeholder = "Username"> 
-    </div>
 
-    <div class="mb-3">
         <input
-        class="password"
-        class="form-control"
+        class="form-control custom-input"
         name="password"
         [(ngModel)] ="model.password"
         placeholder = "Password"> 
-    </div>
+
     <br>
     <div class="text-center" >
-        <button class="btn btn-success me-2" type="submit">Register</button>
-        <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
+        <button class="btn btn-success me-2" type="submit">Sign Up</button>
+        <button class="btn btn-default" type="button" routerLink="/login" routerLinkActive="active">Login</button>
     </div>
 </form>

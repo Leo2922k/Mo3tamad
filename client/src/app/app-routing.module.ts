@@ -11,6 +11,11 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import { ExamQuizComponent } from './exams/exam-quiz/exam-quiz.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { preventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
+import { ExamResultComponent } from './exams/exam-result/exam-result.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { AdminGuard } from './_guards/admin.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -21,9 +26,13 @@ const routes: Routes = [
       {path: 'exams', component: ExamListComponent},
       {path: 'exams/:examname', component: ExamQuizComponent},
       {path: 'member/edit', component: MemberEditComponent, canDeactivate: [preventUnsavedChangesGuard]},
+      {path: 'results', component: ExamResultComponent},
+      {path: 'admin', component: AdminPanelComponent, canActivate: [AdminGuard]},
     ]
   },
   {path: 'about', component: AboutComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'errors', component: TestErrorComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: 'server-error', component: ServerErrorComponent},

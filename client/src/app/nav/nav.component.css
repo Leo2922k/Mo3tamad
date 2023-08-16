@@ -7,3 +7,20 @@ img {
 .custom-dropdown-menu {
     width: 210px;
 }
+
+.no-border {
+    border: none;
+}
+
+/* Custom button style */
+.custom-button {
+    font-size: 15px; /* Adjust the font size */
+    padding: 10px 20px; /* Adjust padding for size */
+    background-color: #212121; /* Change to your desired color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+    margin-left: 2px;
+  }
+  

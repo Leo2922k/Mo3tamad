@@ -20,5 +20,7 @@ namespace API.Interfaces
         Task <IEnumerable<ExamsDto>> GetExamsDtoAsync();
 
         Task <ExamsDto> GetExamDtoAsync (string examname);
+
+       /* Task <string> GetExamDtoByIdAsync (int examid);*/
     }
 }

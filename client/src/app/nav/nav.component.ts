@@ -35,7 +35,8 @@ export class NavComponent {
 
       next: () => {
         this.toastr.success('Welcome mate!');
-        this.router.navigateByUrl('/about');
+        window.location.reload();
+        this.router.navigateByUrl('/');
       }
     })
     

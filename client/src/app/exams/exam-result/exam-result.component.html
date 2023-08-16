@@ -1,0 +1,32 @@
+<h1>Exams Attempts</h1>
+<table>
+  <tr>
+    <th>Exam Name</th>
+    <th>Grade</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let attempt of userexams$ | async">
+    <ng-container *ngFor="let member of members$ | async">
+      <ng-container *ngIf="member.userName === user?.username">
+        <ng-container *ngIf="member.id == attempt.id">
+          <ng-container *ngFor="let exam of exams$ | async">
+            <ng-container *ngIf="exam.examId == attempt.examId">
+             <td>{{ exam.examName }}</td>
+            </ng-container>
+          </ng-container>
+          <ng-container *ngFor="let exam of exams$ | async">
+            <ng-container *ngIf="exam.examId == attempt.examId">
+             <td>{{ attempt.userExamGrade }} / {{ exam.examQuestion.length }}</td>
+            </ng-container>
+          </ng-container>
+        <td class="btn-container">
+            <button class="btn btn-repeat">Repeat</button>
+            <button class="btn btn-delete" (click)="delete(attempt.id, attempt.examId)">Delete</button>
+        </td>
+      </ng-container>
+      </ng-container>
+    </ng-container>
+</tr>
+</table>
+

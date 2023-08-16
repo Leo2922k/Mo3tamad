@@ -5,6 +5,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { FileUploadModule } from 'ng2-file-upload';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -19,13 +20,15 @@ import { FileUploadModule } from 'ng2-file-upload';
     }),
     NgxSpinnerModule.forRoot({ type: 'ball-beat' }),
     FileUploadModule,
+    ModalModule.forRoot()
   ],
   exports: [
     BsDropdownModule,
     ToastrModule,
     TabsModule,
     NgxSpinnerModule,
-    FileUploadModule
+    FileUploadModule,
+    ModalModule
   ]
 })
 export class SharedModule { }

@@ -23,6 +23,7 @@ namespace API.Helpers
             CreateMap<Question, QuestionDto>();
             CreateMap<Answers, AnswersDto>();
             CreateMap<UserExam, UserExamDto>();
+            //CreateMap<UserExamDto, UserExam>();
 
             CreateMap<MemberUpdateDto, AppUser>();
         }

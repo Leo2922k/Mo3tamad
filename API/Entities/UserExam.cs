@@ -18,6 +18,5 @@ namespace API.Entities
         public string UserExamCamVideoUrl { get; set; }
 
         public int UserExamGrade { get; set; }
-
     }
 }

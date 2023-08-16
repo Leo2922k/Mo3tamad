@@ -1,8 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription, interval, take } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { NotFoundError, Observable, Subscription, catchError, interval, take, tap } from 'rxjs';
 import { Exams } from 'src/app/_models/exams';
 import { ActivatedRoute } from '@angular/router';
 import { ExamsService } from 'src/app/_services/exams.service';
+import { UserExamService } from 'src/app/_services/userexam.service';
+import { UserExam } from 'src/app/_models/userexam';
+import { Member } from 'src/app/_models/member';
+import { User } from 'src/app/_models/user';
+import { AccountService } from 'src/app/_services/account.service';
+import { MembersService } from 'src/app/_services/members.service';
 
 @Component({
   selector: 'app-exam-quiz',
@@ -11,6 +17,10 @@ import { ExamsService } from 'src/app/_services/exams.service';
 })
 export class ExamQuizComponent implements OnInit{
 
+  member: Member | undefined;
+  user: User | null = null;
+
+  
   exam: Exams | undefined;
   showWarning: boolean = false;
   questionsList: any[]= [];
@@ -21,12 +31,33 @@ export class ExamQuizComponent implements OnInit{
   timer = interval(1000);
   subscription: Subscription [] = [];
   correctAnswerCount: number = 0;
+  userExamSubscription: Subscription | undefined;
 
-  constructor(private examsService: ExamsService, private route: ActivatedRoute) { 
+
+  userexamattempt$: Observable<UserExam> | undefined;
+
+
+
+  constructor(private examsService: ExamsService, private route: ActivatedRoute
+             ,private userExamService: UserExamService, private accounService: AccountService, private memberService: MembersService) {
+              
+              this.accounService.currentUser$.pipe(take(1)).subscribe ({
+                next: user => this.user = user
+              })
+
   }
 
   ngOnInit (): void {
+    this.loadMember();
     this.loadExam();
+  }
+
+  loadMember() {
+    if (!this.user) return;
+
+    this.memberService.getMember(this.user.username).subscribe ({
+      next: member => this.member = member
+    })
   }
 
   getLoadQuestions() {
@@ -56,17 +87,20 @@ export class ExamQuizComponent implements OnInit{
   nextQuestion() {
     this.remainingTime = 15;
     if(this.currentQuestionNo < this.questionsList.length-1) {
-      this.currentQuestionNo ++;
+      this.currentQuestionNo++;
     } else {
+      this.finish();
       this.subscription.forEach(element => {
         element.unsubscribe();
       });
-      this.finish();
     } 
   }
  
 
-  finish() {
+  async finish() {
+    console.log("submitted")
+    await this.submitUserExamAttempt();
+    console.log("finished")
     this.isQuizEnded = true;
     this.isQuizStarted = false; 
     this.currentQuestionNo = 0;
@@ -84,7 +118,7 @@ export class ExamQuizComponent implements OnInit{
 
   selectOption(answer: any) {
     if(answer.answersTrue) {
-      this.correctAnswerCount ++;
+      this.correctAnswerCount++;
     }
     answer.isSelected = true;
   }
@@ -98,8 +132,8 @@ export class ExamQuizComponent implements OnInit{
     }
   }
 
-  startQuiz() {
-    this.showWarning = false;
+  async startQuiz() {
+    this.showWarning = true;
     this.isQuizStarted = true;  
     this.subscription.push(this.timer.subscribe(res=> {
       console.log(res);
@@ -115,4 +149,62 @@ export class ExamQuizComponent implements OnInit{
 
 
 
+  
+  async submitUserExamAttempt() {
+
+    if (!this.exam) return;
+    if (!this.member) return;
+
+ 
+    const userExamAttempty: UserExam = {
+      id: this.member?.id,
+      examId: this.exam?.examId,
+      userExamScreenVideoUrl: 'sample-screen-video-url',
+      userExamCamVideoUrl: 'sample-cam-video-url',
+      userExamGrade: (this.correctAnswerCount)
+    };
+
+   await this.userExamService.AddUserExamAttemptAsync(userExamAttempty);
+
+  // await this.userExamService.updateUserExamAttempt(userExamAttempty);
+   //await this.userExamService.deleteUserExam(5,2);
+   
+}
+
+/*async redoUserExamAttempt() {
+
+  if (!this.exam) return;
+  if (!this.member) return;
+
+
+  const userExamAttempty: UserExam = {
+    id: this.member?.id,
+    examId: this.exam?.examId,
+    userExamScreenVideoUrl: 'sample-screen-video-url',
+    userExamCamVideoUrl: 'sample-cam-video-url',
+    userExamGrade: (this.correctAnswerCount)
+  };
+
+ //await this.userExamService.AddUserExamAttemptAsync(userExamAttempty);
+
+ await this.userExamService.updateUserExamAttempt(userExamAttempty);
+ //await this.userExamService.deleteUserExam(5,2);
+ 
+}*/
+
+ /*async previousAttempt() {
+
+  if (!this.exam) return;
+  if (!this.member) return;
+
+  if (this.userExamService.getUserExam(this.member?.id , this.exam?.examId)) {
+    await this.startQuiz();
+    await this.submitUserExamAttempt();
+  }
+  else {
+    await this.startQuiz();
+    this.redoUserExamAttempt();
+  }
+
+}*/
 }

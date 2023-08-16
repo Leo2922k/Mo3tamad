@@ -61,5 +61,14 @@ namespace API.Data
                 .ProjectTo<ExamsDto>(_mapper.ConfigurationProvider)
                 .SingleOrDefaultAsync();
         }
+
+         /*public async Task<string> GetExamDtoByIdAsync(int examid)
+        {
+            return await _context.Exams
+                //.Include(exam => exam.ExamQuestions)
+                .Where(x => x.ExamId == examid)
+                .ProjectTo<string>(_mapper.ConfigurationProvider)
+                .SingleOrDefaultAsync();
+        }*/
     }
 }

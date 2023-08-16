@@ -2,6 +2,8 @@ using System.Security.Claims;
 using API.Date;
 using API.DTO;
 using API.Entities;
+// UsersController: GetUsers - GetUser - UpdateUser - AddPhoto
+
 using API.Extensions;
 using API.Interfaces;
 using AutoMapper;
@@ -33,6 +35,7 @@ namespace API.Controllers
             return Ok(users);
 
         }
+        
 
         [HttpGet("{username}")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)

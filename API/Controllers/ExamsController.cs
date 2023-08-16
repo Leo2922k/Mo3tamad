@@ -1,3 +1,5 @@
+// ExamsController
+
 using API.DTO;
 using API.Interfaces;
 using AutoMapper;
@@ -36,5 +38,12 @@ namespace API.Controllers
             return await _examRepository.GetExamDtoAsync(examname);
 
         }
+
+        /*[HttpGet("{examid}")]
+        public async Task<ActionResult<string>> GetExamById(int examid)
+        {
+            return await _examRepository.GetExamDtoByIdAsync(examid);
+
+        }*/
     }
 }

@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 3rem 0;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  
+  .about {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  /* Additional styling for links */
+  .about a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .about a:hover {
+    text-decoration: underline;
+  }
+  
+  /* You can customize the fonts, colors, sizes, and other styles to fit your design */
+  
