@@ -24,3 +24,12 @@ img {
     margin-left: 2px;
   }
   
+  /* styles.css */
+/* styles.css */
+img.with-black-border {
+    display: block;
+    border: 2px solid black; /* Add a black border with 2px width */
+    padding: 0;
+    margin: 0 auto; /* Center the image horizontally */
+}
+

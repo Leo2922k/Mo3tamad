@@ -1,1 +1,48 @@
-<p>result-management works!</p>
+<h1>Exams Attempts</h1>
+<table>
+  <tr>
+    <th style="width:80%">Exam Name</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let exam of exams$ | async; let j = index">
+    <td>{{ exam.examName }}</td>
+    <td>
+        <button class="btn btn-info custom-btn-size" (click)="toggleAttempts(j)">
+            {{ showAttempts[j] ?  'Hide Attempts' : 'Show Attempts'}}</button>
+    </td>
+  </tr>
+  <br>
+  <tr *ngFor="let exam of exams$ |async; let i = index" [ngClass]="{ 'hidden-attemps': !showAttempts[i] }">
+    <td colspan="3">
+        <h4>{{exam.examName}} Exam Attempts</h4>
+       <table>
+            <tr>
+                <th style="width:80%">User Name</th>
+                <th >User Grade</th>
+            </tr>
+            <tr *ngFor="let attempt of userexams$ | async">
+                <ng-container *ngIf="exam.examId == attempt.examId">
+                    <ng-container *ngFor="let member of members$ | async">
+                        <ng-container *ngIf="member.id == attempt.id">
+                    <td>{{ member.userName }}</td>
+                </ng-container>
+                </ng-container>
+                <ng-container *ngIf="attempt.userExamGrade >= (exam.examQuestion.length)/2">
+                    <span [ngStyle]="{'color': 'green'}">
+                        <td>{{ attempt.userExamGrade }} / {{ exam.examQuestion.length }}</td>
+                    </span>
+                </ng-container>
+                <ng-container *ngIf="attempt.userExamGrade < (exam.examQuestion.length)/2">
+                    <span [ngStyle]="{'color': 'red'}">
+                        <td>{{ attempt.userExamGrade }} / {{ exam.examQuestion.length }}</td>
+                    </span>
+                </ng-container>
+            </ng-container>
+            </tr> 
+        </table>  
+    </td>
+    </tr>
+</table>
+
+

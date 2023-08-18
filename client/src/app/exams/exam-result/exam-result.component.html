@@ -21,7 +21,11 @@
             </ng-container>
           </ng-container>
         <td class="btn-container">
-            <button class="btn btn-repeat">Repeat</button>
+          <ng-container *ngFor="let exam of exams$ | async">
+            <ng-container *ngIf="exam.examId == attempt.examId">
+            <button class="btn btn-repeat" routerLink="/repeat/{{exam.examName}}">Repeat</button>
+          </ng-container>
+        </ng-container>
             <button class="btn btn-delete" (click)="delete(attempt.id, attempt.examId)">Delete</button>
         </td>
       </ng-container>

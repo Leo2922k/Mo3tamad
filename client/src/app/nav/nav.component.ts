@@ -12,6 +12,7 @@ export class NavComponent {
 
   model: any = {}
   loggedIn = false;
+  defaultImageUrl = 'https://img.favpng.com/7/5/8/computer-icons-font-awesome-user-font-png-favpng-YMnbqNubA7zBmfa13MK8WdWs8.jpg';
 
   constructor(public accountService: AccountService,
               private router: Router,

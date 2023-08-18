@@ -26,6 +26,7 @@ namespace API.Helpers
             //CreateMap<UserExamDto, UserExam>();
 
             CreateMap<MemberUpdateDto, AppUser>();
+            CreateMap<RegisterDto, AppUser>();
         }
     }
 }

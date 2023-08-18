@@ -1,21 +1,34 @@
-<form class="custom-form" #registerForm="ngForm" (ngSubmit)="register()" autocomplete="off">
+<form class="custom-form" [formGroup]="registerForm" (ngSubmit)="registerForm.valid && register()" autocomplete="off">
     <h1 class="signup-heading">Sign up</h1>
     <img src="https://static.vecteezy.com/system/resources/thumbnails/007/407/996/small/user-icon-person-icon-client-symbol-login-head-sign-icon-design-vector.jpg" alt="Login Image" class="login-image">
-        <input
-        class="form-control custom-input"
-        name="username"
-        [(ngModel)] ="model.username"
-        placeholder = "Username"> 
-
-        <input
-        class="form-control custom-input"
-        name="password"
-        [(ngModel)] ="model.password"
-        placeholder = "Password"> 
+    <hr>
+    <div class="mb-3">
+        <label style="margin-right:80px">Gender</label>
+        <label class="form-check-label" >
+            <input  type="radio" class="form-check-input" value="male" formControlName="gender"> Male 
+        </label>
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" value="female" formControlName="gender"> Female 
+        </label>
+    </div>
+    <app-text-input [formControl]="$any(registerForm.controls['username'])" [label]="'Username'"></app-text-input>
+    <app-text-input [formControl]="$any(registerForm.controls['fullName'])" [label]="'Full Name'"></app-text-input>
+    <app-date-picker [formControl]="$any(registerForm.controls['dateOfBirth'])" [label]="'Date of birth'"></app-date-picker>
+    <app-text-input [formControl]="$any(registerForm.controls['password'])" [label]="'Password'" [type]="'password'"></app-text-input>
+    <app-text-input [formControl]="$any(registerForm.controls['confirmPassword'])" [label]="'Confirm Password'" [type]="'password'"></app-text-input>
 
     <br>
+
+    <div class="mb-3" *ngIf="validationErrors">
+        <ul class="text-danger">
+            <li *ngFor="let error of validationErrors">
+                {{error}}
+            </li>
+        </ul>
+    </div>
+
     <div class="text-center" >
-        <button class="btn btn-success me-2" type="submit">Sign Up</button>
+        <button [disabled]="!registerForm.valid" class="btn btn-success me-2" type="submit">Sign Up</button>
         <button class="btn btn-default" type="button" routerLink="/login" routerLinkActive="active">Login</button>
     </div>
 </form>

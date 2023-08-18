@@ -5,7 +5,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
@@ -33,6 +33,11 @@ import { UserManagementComponent } from './admin/user-management/user-management
 import { ExamManagementComponent } from './admin/exam-management/exam-management.component';
 import { ResultManagementComponent } from './admin/result-management/result-management.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
+import { ExamRepeatComponent } from './exams/exam-repeat/exam-repeat.component';
+import { TextInputComponent } from './_forms/text-input/text-input.component';
+import { DatePickerComponent } from './_forms/date-picker/date-picker.component';
+
+  
 
 @NgModule({
   declarations: [
@@ -59,6 +64,9 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
     ExamManagementComponent,
     ResultManagementComponent,
     RolesModalComponent,
+    ExamRepeatComponent,
+    TextInputComponent,
+    DatePickerComponent
   ],
   imports: [
     CommonModule,
@@ -67,6 +75,7 @@ import { RolesModalComponent } from './modals/roles-modal/roles-modal.component'
     HttpClientModule,
     BrowserAnimationsModule,// for http requset
     FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   providers: [

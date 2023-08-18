@@ -62,6 +62,11 @@ namespace API.Data
                 .SingleOrDefaultAsync();
         }
 
+        public void Delete(AppExams ExamToDelete)
+        {
+            _context.Remove(ExamToDelete);
+        }
+
          /*public async Task<string> GetExamDtoByIdAsync(int examid)
         {
             return await _context.Exams

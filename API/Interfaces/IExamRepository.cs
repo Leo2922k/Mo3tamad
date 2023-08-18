@@ -20,6 +20,7 @@ namespace API.Interfaces
         Task <IEnumerable<ExamsDto>> GetExamsDtoAsync();
 
         Task <ExamsDto> GetExamDtoAsync (string examname);
+        public void Delete(AppExams ExamToDelete);
 
        /* Task <string> GetExamDtoByIdAsync (int examid);*/
     }

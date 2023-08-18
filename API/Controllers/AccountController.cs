@@ -38,10 +38,10 @@ namespace API.Controllers
             if (await UserExists(registerDto.Username)) 
                 return BadRequest ("Username is taken");
 
-           // var user = _mapper.Map<AppUser> (registerDto);
-           var user = new AppUser {
+            var user = _mapper.Map<AppUser> (registerDto);
+           /*var user = new AppUser {
                 UserName = registerDto.Username.ToLower(),
-            };
+            };*/
             user.UserName = registerDto.Username.ToLower();
             
             var result = await _userManager.CreateAsync(user, registerDto.Password);
@@ -76,7 +76,7 @@ namespace API.Controllers
             return new UserDto{
                 Username = user.UserName,
                 Token = await _tokenService.CreateToken(user),
-                PhotoUrl = user.ProfilePicture.PhotoUrl // admin error
+                PhotoUrl = user.ProfilePicture?.PhotoUrl // admin error
             };
 
 

@@ -1,1 +1,87 @@
-<p>exam-management works!</p>
+<hr>
+<div class="tab-panel">
+    <tabset class="member-tabset">
+        <tab heading="Current exams">
+            <div class="container">
+                <table>
+                    <tr>
+                        <th>Exam Name</th>
+                        <th>Exam Description</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr *ngFor="let exam of exams$ |async; let i = index">
+                        <td>{{ exam.examName }}</td>
+                        <td style="font-size: 14px;">{{ exam.examDescription }}</td>
+                        <td>
+                            <button class="btn btn-info custom-btn-size" (click)="toggleQuestions(i)">
+                                {{ showQuestions[i] ?  'Hide Questions' : 'Show Questions'}}
+                            </button>
+                            <button class="btn btn-info custom-btn-size" style="margin-left: 10px;" (click)="deleteExam(exam.examId)">Delete Exam</button>
+                           <!--  <button class="btn btn-info" (click)="deleteExam(i)">Delete Exam</button>  -->
+                        </td>
+                    </tr>
+                    <br>
+                    <tr *ngFor="let exam of exams$ |async; let i = index" [ngClass]="{ 'hidden-questions': !showQuestions[i] }">
+                        <td colspan="3">
+                            <h4>{{exam.examName}} Exam Questions</h4>
+                            <table>
+                                <tr>
+                                    <th style="width:50%">Question text</th>
+                                    <th style="width:50%" >Question answers</th>
+                                </tr>
+                                <tr *ngFor="let question of exam.examQuestion">
+                                    <td>{{ question.questionText }}</td>
+                                    <td>
+                                        <ul>
+                                            <li *ngFor="let answer of question.questionAnswers">
+                                                <ng-container *ngIf="answer.answersTrue; else falseAnswer">
+                                                    <span [ngStyle]="{'color': 'green'}">
+                                                        {{ answer.answersOption }}
+                                                    </span>
+                                                </ng-container>
+                                                <ng-template #falseAnswer>
+                                                    <span [ngStyle]="{'color': 'red'}">
+                                                        {{ answer.answersOption }}
+                                                    </span>
+                                                </ng-template>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                 
+            </div>
+        </tab>
+        <tab heading="Add exam" >
+            <div class="container">
+                <!-- <div class="add-exam-container">
+                    <form>
+                      <label for="jsonFile">Upload JSON File:</label>
+                      <input type="file" #file id="jsonFile" accept=".txt">
+                      <input type="file" class="file-upload" onchange="console.log(event.target.files)">
+                    </form>
+                     <button (click)="handleFileInput(file)">Add Exam</button>  
+                  </div>       -->
+                  <div class="text-center">
+                    <input class="form-control" type="file" 
+                            (change)="onChange($event)">
+                  
+                    <button (click)="onUpload()" 
+                        class="btn btn-success" style="margin: 10px;">
+                        Upload
+                    </button>
+                </div>
+                  
+                <!-- Shareable short link of  uploaded file -->
+                <div class="container text-center jumbotron"
+                    *ngIf="shortLink">
+                    <h2> Visit Here</h2>
+                    <a href="{{shortLink}}">{{shortLink}}</a>
+                </div>
+            </div>
+        </tab>
+    </tabset>
+</div>

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="/" routerLinkActive="active">
-        <img src="https://res.cloudinary.com/dbbfdycf0/image/upload/f_auto,q_auto/v1/logos/c2ttisd0aa7e7cifqat9" alt="logo" class="no-border" >
+        <img src="https://res.cloudinary.com/dbbfdycf0/image/upload/f_auto,q_auto/v1/logos/gmlaa8de9dhckvvqisyv" alt="logo" class="no-border" >
     </a>
       <!---<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
         </ul>
 
         <div class="btn-group" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
-          <img src="{{user.photoUrl}}" alt="user photo">
+          <img src="{{user.photoUrl || defaultImageUrl}}" alt="user photo" class="with-black-border">
           <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
             Welcome {{user.username | titlecase}} <span class="caret"></span>
           </button>
