@@ -165,10 +165,9 @@ export class ExamRepeatComponent implements OnInit{
       userExamGrade: (this.correctAnswerCount)
     };
 
-  // await this.userExamService.AddUserExamAttemptAsync(userExamAttempty);
+
 
    await this.userExamService.updateUserExamAttempt(userExamAttempty);
-   //await this.userExamService.deleteUserExam(5,2);
    
 }
 

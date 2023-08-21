@@ -48,7 +48,6 @@ namespace API.Data
         public async Task<IEnumerable<ExamsDto>> GetExamsDtoAsync()
         {
                 return await _context.Exams
-                   // .Include(exam => exam.ExamQuestions)
                     .ProjectTo<ExamsDto> (_mapper.ConfigurationProvider)
                     .ToListAsync();
         }
@@ -56,7 +55,6 @@ namespace API.Data
         public async Task<ExamsDto> GetExamDtoAsync(string examname)
         {
             return await _context.Exams
-                //.Include(exam => exam.ExamQuestions)
                 .Where(x => x.ExamName == examname)
                 .ProjectTo<ExamsDto>(_mapper.ConfigurationProvider)
                 .SingleOrDefaultAsync();
@@ -66,14 +64,5 @@ namespace API.Data
         {
             _context.Remove(ExamToDelete);
         }
-
-         /*public async Task<string> GetExamDtoByIdAsync(int examid)
-        {
-            return await _context.Exams
-                //.Include(exam => exam.ExamQuestions)
-                .Where(x => x.ExamId == examid)
-                .ProjectTo<string>(_mapper.ConfigurationProvider)
-                .SingleOrDefaultAsync();
-        }*/
     }
 }

@@ -45,7 +45,6 @@ namespace API.Date
             await userManager.CreateAsync(admin, "Pa$$w0rd");
             await userManager.AddToRolesAsync(admin, new [] {"Admin", "Moderator"});
 
-           // await context.SaveChangesAsync();
 
         }
 

@@ -17,7 +17,6 @@
                                 {{ showQuestions[i] ?  'Hide Questions' : 'Show Questions'}}
                             </button>
                             <button class="btn btn-info custom-btn-size" style="margin-left: 10px;" (click)="deleteExam(exam.examId)">Delete Exam</button>
-                           <!--  <button class="btn btn-info" (click)="deleteExam(i)">Delete Exam</button>  -->
                         </td>
                     </tr>
                     <br>
@@ -57,14 +56,6 @@
         </tab>
         <tab heading="Add exam" >
             <div class="container">
-                <!-- <div class="add-exam-container">
-                    <form>
-                      <label for="jsonFile">Upload JSON File:</label>
-                      <input type="file" #file id="jsonFile" accept=".txt">
-                      <input type="file" class="file-upload" onchange="console.log(event.target.files)">
-                    </form>
-                     <button (click)="handleFileInput(file)">Add Exam</button>  
-                  </div>       -->
                   <div class="text-center">
                     <input class="form-control" type="file" 
                             (change)="onChange($event)">

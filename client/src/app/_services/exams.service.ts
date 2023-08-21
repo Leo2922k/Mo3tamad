@@ -31,16 +31,4 @@ export class ExamsService {
     if (exam) return of(exam);
     return this.http.get<Exams>(`${this.baseUrl}exams/${examname}`);
   }
-
-  /*getExambyid (examid: number): Observable<string> {
-    const exam = this.exams.find (x => x.examId === examid);
-    if (exam) return of(exam);
-    return this.http.get<string>(`${this.baseUrl}exams/${examid}`);
-  }*/
-
-
-  // questions editied
-  /*getQuestions() {
-    return this.http.get<ExamQuestion[]>(this.baseUrl+'questions')
-  }*/
 }

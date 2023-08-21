@@ -60,11 +60,8 @@ namespace API.Data
             .Where(x => x.Id == id && x.ExamId == examid)
             .Select(x => new UserExamDto
             {
-                //UserExamScreenVideoUrl = x.UserExamScreenVideoUrl,
-               // UserExamCamVideoUrl = x.UserExamCamVideoUrl,
                 UserExamGrade = x.UserExamGrade
-                // Map properties from UserExam entity to UserExamDto properties
-                // For example: Property1 = x.Property1, Property2 = x.Property2, ...
+
             })
             .FirstOrDefaultAsync();
 

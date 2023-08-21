@@ -23,14 +23,12 @@ app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
 
-//app.UseCoreAdminCustomAuth((serviceProvider) => Task.FromResult(false));
 
 // middleware
 app.UseAuthentication(); // do u have valid token? 
 app.UseAuthorization(); // what are u allowed to do?
 
 app.MapControllers();
-//2
 app.UseStaticFiles();
 
 using var scope = app.Services.CreateScope(); // access to all services in the program class

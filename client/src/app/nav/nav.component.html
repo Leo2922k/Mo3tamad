@@ -3,15 +3,8 @@
       <a class="navbar-brand" routerLink="/" routerLinkActive="active">
         <img src="https://res.cloudinary.com/dbbfdycf0/image/upload/f_auto,q_auto/v1/logos/gmlaa8de9dhckvvqisyv" alt="logo" class="no-border" >
     </a>
-      <!---<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
-     <!--- <div class="collapse navbar-collapse" id="navbarCollapse">-->
 
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-         <!-- <li class="nav-item">
-            <a class="nav-link" routerLink="/about" routerLinkActive="active" >About</a>
-          </li>-->
           <ng-container *ngIf="accountService.currentUser$ | async">
             <li class="nav-item" >
               <a class="nav-link" routerLink="/exams" routerLinkActive="active">Exams</a>
@@ -37,23 +30,7 @@
         </div>
 
 
-       <!--  <form *ngIf="!loggedIn" #loginForm = "ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
-          <input
-            name = "username"
-            [(ngModel)] = "model.username"
-            class="form-control me-2"
-            type="text"
-            placeholder="Username">
-          <input
-            name = "password"
-            [(ngModel)] = "model.password"
-            class="form-control me-2"
-            type="password"
-            placeholder="Password">
-          <button class="btn btn-dark" type="submit">Login</button>
-        </form>-->
         <button *ngIf="!loggedIn" class="custom-button" routerLink="/register" routerLinkActive="active">Sign Up</button>
         <button *ngIf="!loggedIn" class="custom-button" routerLink="/login" routerLinkActive="active">Login</button>
       </div>
-  <!---  </div> -->
   </nav>

@@ -25,9 +25,6 @@ import { UserExam } from '../_models/userexam';
         return this.Http.get<UserExam>(`${this.baseUrl}UserExam/${id}/${examId}`);
       }
     
-      /*addUserExamAttempt(attempt: UserExam): Observable<any> {
-        return this.http.post(`${this.baseUrl}UserExam/add-attempt`, attempt);
-      }*/
       AddUserExamAttemptAsync(attempt: UserExam) {
         return this.Http.post(this.baseUrl + 'UserExam/add-attempt', attempt).toPromise();
       }

@@ -61,6 +61,8 @@ export class ExamManagementComponent {
                   this.shortLink = event.link;
 
                   this.loading = false; // Flag variable 
+
+                  
               }
           }
       );

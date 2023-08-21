@@ -49,12 +49,6 @@ namespace API.Controllers
         [HttpPost("add-attempt")]
     public async Task<ActionResult> AddUserExamAttemptAsync(UserExam userExamAttempt)
     {
-        // Find the user and exam based on the user's attempt
-       // var appUser = await _context.Users.FindAsync(userExamAttempt.Id);
-        //var appExam = await _context.Exams.FindAsync(userExamAttempt.ExamId);
-        //var appUser = await _context.Users.FindAsync(userExamAttempt.Id);
-
-        // Create a new UserExam entity
         var userExam = new UserExam
         {
             Id = userExamAttempt.Id,
@@ -98,7 +92,6 @@ namespace API.Controllers
 
         }
 
-        /**/
         [HttpDelete("{id}/{examId}")]
         public async Task<IActionResult> DeleteUserExam(int id, int examId)
         {
@@ -115,7 +108,5 @@ namespace API.Controllers
 
             return NoContent(); // Successful deletion, return 204 No Content
         }
-
-        
     }
 }

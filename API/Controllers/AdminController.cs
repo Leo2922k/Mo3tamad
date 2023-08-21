@@ -113,32 +113,6 @@ namespace API.Controllers
                 return BadRequest($"Error: {ex.Message}");
             }
         }
-       /* [Authorize(Policy = "ModeratePhotoRole")]
-        [HttpPost("add-exam")]
-        public async Task<ActionResult> AddExam (IFormFile file) {
-
-
-             var user = new AppExams {
-
-             };
-
-
-            if (await context.Exams.AnyAsync()) return;
-
-            var examData = await File.ReadAllTextAsync("Data/ExamSeedData.json");
-
-            var options = new JsonSerializerOptions{PropertyNameCaseInsensitive = true};
-
-            var exams = JsonSerializer.Deserialize<List<AppExams>>(examData); // json -> c#
-
-            foreach (var exam in exams) {
-                
-                context.Exams.Add(exam);
-            }
-
-            await context.SaveChangesAsync();
-
-        }*/
         
     }
 }

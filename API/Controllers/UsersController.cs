@@ -78,8 +78,6 @@ namespace API.Controllers
 
             user.ProfilePicture = photo;
 
-           // if (await _userRepository.SaveAllAsync()) return _mapper.Map<PhotoDto>(photo);
-
             if (await _userRepository.SaveAllAsync())  {
 
                 return CreatedAtAction(

@@ -85,8 +85,7 @@ namespace API.Controllers
         // prevent repeat the username
         private async Task<bool> UserExists (string username) {
 
-            // x: appuser
-            // AnyAsync: Asynchronously determines whether any element of a sequence satisfies a condition
+
             return await _userManager.Users.AnyAsync(x => x.UserName == username.ToLower());
 
         }

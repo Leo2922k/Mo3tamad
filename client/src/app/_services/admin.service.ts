@@ -25,13 +25,8 @@ export class AdminService {
     return this.http.delete(`${this.baseUrl}admin/deleteexam/${examId}`).toPromise();
   }
 
-  /*AddExam(exam: File) {
-    return this.http.post(this.baseUrl + 'admin/add-exam', exam).toPromise();
-  }*/
 
   AddExam(file: File): Promise<File> {
-    //const formData = new FormData();
-    //formData.append('file', file);
 
     return this.http.post<any>(this.baseUrl +'admin/add-exam', file).toPromise();
   }
